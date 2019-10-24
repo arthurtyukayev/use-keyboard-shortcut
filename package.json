@@ -1,0 +1,31 @@
+{
+  "name": "use-keyboard-shortcut",
+  "version": "1.0.0",
+  "description": "A custom React hook for adding keyboard shortcuts to your application",
+  "main": "index.js",
+  "sideEffects": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurtyukayev/use-keyboard-shortcut.git"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "keyboard",
+    "shortcut",
+    "custom"
+  ],
+  "author": "Arthur Tyukayev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arthurtyukayev/use-keyboard-shortcut/issues"
+  },
+  "homepage": "https://github.com/arthurtyukayev/use-keyboard-shortcut#readme"
+}
