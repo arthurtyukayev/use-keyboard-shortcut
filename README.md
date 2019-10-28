@@ -25,6 +25,7 @@ For anothger exmaple on how to use this hook, please see the [example project](h
 `useKeyboardShortcut(keysArray, callback)`
 
 `keysArray` should be an array of `KeyboardEvent.key` strings. A full list of strings can be seen [here](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)
+
 `callback` should be a function that is called once the keys have been pressed.
 
 ## Bugs / Problems 
