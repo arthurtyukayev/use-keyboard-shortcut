@@ -4,7 +4,7 @@
 
 [Click here for a small demo!](https://use-keyboard-shortcut.netlify.com/)
 
-A simple React hook that allows you to add keyboard shortcuts to your application.
+A custom React hook that allows adding keyboard shortcuts to a React application.
 
 ```javascript
 import React from 'react'
@@ -19,7 +19,7 @@ const App = () => {
 }
 ```
 
-For anothger exmaple on how to use this hook, please see the [example project](https://github.com/arthurtyukayev/use-keyboard-shortcut/tree/master/example)
+For another example on how to use this hook, please see the [example project](https://github.com/arthurtyukayev/use-keyboard-shortcut/tree/master/example)
 
 ### Documentation
 `useKeyboardShortcut(keysArray, callback)`
