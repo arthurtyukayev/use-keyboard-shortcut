@@ -30,7 +30,7 @@ const useKeyboardShortcut = (shortcutKeys, callback) => {
     );
 
   const initalKeyMapping = shortcutKeys.reduce((currentKeys, key) => {
-    currentKeys[key] = false;
+    currentKeys[key.toLowerCase()] = false;
     return currentKeys;
   }, {});
 
@@ -39,31 +39,35 @@ const useKeyboardShortcut = (shortcutKeys, callback) => {
   const keydownListener = useCallback(
     keydownEvent => {
       const { key, target, repeat } = keydownEvent;
+      const loweredKey = key.toLowerCase();
+
       if (repeat) return;
       if (blacklistedTargets.includes(target.tagName)) return;
-      if (!shortcutKeys.includes(key)) return;
+      if (keys[loweredKey] === undefined) return;
 
-      if (!keys[key])
-        setKeys({ type: "set-key-down", key });
+      if (keys[loweredKey] === false)
+        setKeys({ type: "set-key-down", key: loweredKey });
     },
-    [shortcutKeys, keys]
+    [keys]
   );
 
   const keyupListener = useCallback(
     keyupEvent => {
       const { key, target } = keyupEvent;
-      if (blacklistedTargets.includes(target.tagName)) return;
-      if (!shortcutKeys.includes(key)) return;
+      const loweredKey = key.toLowerCase();
 
-      if (keys[key])
-        setKeys({ type: "set-key-up", key });
+      if (blacklistedTargets.includes(target.tagName)) return;
+      if (keys[loweredKey] === undefined) return;
+
+      if (keys[loweredKey] === true)
+        setKeys({ type: "set-key-up", key: loweredKey });
     },
-    [shortcutKeys, keys]
+    [keys]
   );
 
   useEffect(() => {
-    if (!Object.values(keys).filter(value => !value).length) callback(keys)
-  }, [callback, keys])
+    if (!Object.values(keys).filter(value => !value).length) callback(keys);
+  }, [callback, keys]);
 
   useEffect(() => {
     window.addEventListener("keydown", keydownListener, true);
