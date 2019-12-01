@@ -1,6 +1,6 @@
 {
   "name": "use-keyboard-shortcut",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A custom React hook for adding keyboard shortcuts to your application",
   "main": "index.js",
   "sideEffects": false,
