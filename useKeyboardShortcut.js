@@ -1,4 +1,5 @@
 import { useEffect, useCallback, useReducer } from "react";
+import { disabledEventPropagation } from './utils'
 
 const blacklistedTargets = ["INPUT", "TEXTAREA"];
 
@@ -13,7 +14,7 @@ const keysReducer = (state, action) => {
   }
 };
 
-const useKeyboardShortcut = (shortcutKeys, callback) => {
+const useKeyboardShortcut = (shortcutKeys, callback, options) => {
   if (!Array.isArray(shortcutKeys))
     throw new Error(
       "The first parameter to `useKeyboardShortcut` must be an ordered array of `KeyboardEvent.key` strings."
@@ -29,6 +30,7 @@ const useKeyboardShortcut = (shortcutKeys, callback) => {
       "The second parameter to `useKeyboardShortcut` must be a function that will be envoked when the keys are pressed."
     );
 
+  const { overrideSystem } = options || {}
   const initalKeyMapping = shortcutKeys.reduce((currentKeys, key) => {
     currentKeys[key.toLowerCase()] = false;
     return currentKeys;
@@ -39,6 +41,12 @@ const useKeyboardShortcut = (shortcutKeys, callback) => {
   const keydownListener = useCallback(
     keydownEvent => {
       const { key, target, repeat } = keydownEvent;
+
+      if (overrideSystem) {
+        keydownEvent.preventDefault();
+        disabledEventPropagation(keydownEvent);
+      }
+      
       const loweredKey = key.toLowerCase();
 
       if (repeat) return;
@@ -47,13 +55,20 @@ const useKeyboardShortcut = (shortcutKeys, callback) => {
 
       if (keys[loweredKey] === false)
         setKeys({ type: "set-key-down", key: loweredKey });
+      return false;
     },
-    [keys]
+    [keys, overrideSystem]
   );
 
   const keyupListener = useCallback(
     keyupEvent => {
       const { key, target } = keyupEvent;
+
+      if (overrideSystem) {
+        keyupEvent.preventDefault();
+        disabledEventPropagation(keyupEvent);
+      }
+
       const loweredKey = key.toLowerCase();
 
       if (blacklistedTargets.includes(target.tagName)) return;
@@ -61,8 +76,9 @@ const useKeyboardShortcut = (shortcutKeys, callback) => {
 
       if (keys[loweredKey] === true)
         setKeys({ type: "set-key-up", key: loweredKey });
+      return false;
     },
-    [keys]
+    [keys, overrideSystem]
   );
 
   useEffect(() => {
