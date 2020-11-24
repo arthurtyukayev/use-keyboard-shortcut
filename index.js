@@ -1,3 +1,3 @@
-import useKeyboardShortcut from './useKeyboardShortcut'
+import useKeyboardShortcut from './lib/useKeyboardShortcut'
 
 export default useKeyboardShortcut
