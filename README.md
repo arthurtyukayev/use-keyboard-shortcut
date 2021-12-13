@@ -22,20 +22,24 @@ const App = () => {
 For another example on how to use this hook, please see the [example project](https://github.com/arthurtyukayev/use-keyboard-shortcut/tree/master/example)
 
 ### Documentation
-`useKeyboardShortcut(keysArray, callback)`
+```javascript
+useKeyboardShortcut(shortcutArray, callback, options)
+```
 
-`keysArray` should be an array of `KeyboardEvent.key` strings. A full list of strings can be seen [here](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)
-
-`callback` should be a function that is called once the keys have been pressed.
-
-`options` an object containing some configuration options.
-
+| Parameter | Type | Description |
+|--------------|-----------|------------|
+| `shortcutArray` | `Array` | Array of `KeyboardEvent.key` strings. A full list of strings can be seen [here](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values) |
+| `callback` | `Function` | Function that is called once the keys have been pressed. |
+| `options` | `Object` | Object containing some configuration options. [See options section](https://github.com/arthurtyukayev/use-keyboard-shortcut#options) |
 
 ### Options
 
 A list of possible options to put in the options object passed as the third parameters to the hook.
 
-`overrideSystem` overrides the default browser behavior for that specific keyboard shortcut
+| Option | Default | Description |
+|--------------|-----------|------------|
+| `overrideSystem` | `false` | Overrides the default browser behavior for that specific keyboard shortcut. |
+| `ignoreInputFields` | `true` | Allows disabling and disabling the keyboard shortcuts when pressed inside of input fields. |
 
 ## Bugs / Problems 
 [Please create an issue](https://github.com/arthurtyukayev/use-keyboard-shortcut/issues/new). 
