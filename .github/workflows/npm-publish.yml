@@ -15,7 +15,12 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: npm test
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cypress.io
+        uses: cypress-io/github-action@v2.9.7
 
   publish-npm:
     needs: build
