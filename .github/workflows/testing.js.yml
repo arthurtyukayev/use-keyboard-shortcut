@@ -10,7 +10,7 @@ on:
     branches: [ develop ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -20,9 +20,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-  test:
-    runs-on: ubuntu-latest  
-    steps:
-      - name: Cypress.io
-        uses: cypress-io/github-action@v2.9.7
+    - name: Cypress.io
+      uses: cypress-io/github-action@v2.9.7
 
