@@ -27,4 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm test
+
+    - name: Cypress.io
+      uses: cypress-io/github-action@v2.9.7
+
