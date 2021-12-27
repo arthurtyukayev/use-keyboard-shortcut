@@ -1,8 +1,8 @@
 ## useKeyboardShortcut
 
-[![npm version](https://badge.fury.io/js/use-keyboard-shortcut.svg)](https://badge.fury.io/js/use-keyboard-shortcut)
+[![npm version](https://badge.fury.io/js/use-keyboard-shortcut.svg)](https://badge.fury.io/js/use-keyboard-shortcut) [![testing](https://github.com/arthurtyukayev/use-keyboard-shortcut/actions/workflows/testing.js.yml/badge.svg)](https://github.com/arthurtyukayev/use-keyboard-shortcut/actions/workflows/testing.js.yml)
 
-[Click here for a small demo!](https://use-keyboard-shortcut.netlify.com/)
+[Click here for a small demo!](https://use-keyboard-shortcut.tyukayev.com/)
 
 A custom React hook that allows adding keyboard shortcuts to a React application.
 
@@ -18,8 +18,6 @@ const App = () => {
   )
 }
 ```
-
-For another example on how to use this hook, please see the [example project](https://github.com/arthurtyukayev/use-keyboard-shortcut/tree/master/example)
 
 ### Documentation
 ```javascript
