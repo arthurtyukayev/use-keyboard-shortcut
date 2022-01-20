@@ -5,7 +5,7 @@ declare function useKeyboardShortcut(
   shortcutKeys: string[],
   callback: callbackFn,
   options?: {
-    overrideSystem: boolean;
-    ignoreInputFields: boolean;
+    overrideSystem?: boolean;
+    ignoreInputFields?: boolean;
   }
 ): void;
