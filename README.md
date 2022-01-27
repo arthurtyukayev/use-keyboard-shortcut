@@ -38,6 +38,7 @@ A list of possible options to put in the options object passed as the third para
 |--------------|-----------|------------|
 | `overrideSystem` | `false` | Overrides the default browser behavior for that specific keyboard shortcut. |
 | `ignoreInputFields` | `true` | Allows disabling and disabling the keyboard shortcuts when pressed inside of input fields. |
+| `ignoreElementWithClassName` | [] | Allows disabling keyboard shortcuts when pressed inside of an element with the specified CSS-class. |
 
 ## Bugs / Problems 
 [Please create an issue](https://github.com/arthurtyukayev/use-keyboard-shortcut/issues/new). 

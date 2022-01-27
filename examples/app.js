@@ -19,6 +19,8 @@ function App() {
   useKeyboardShortcut(['P'], handleKeyboardShortcut)
   useKeyboardShortcut(keys, handleKeyboardShortcut)
   useKeyboardShortcut(keysAlternate, handleKeyboardShortcutColor, { overrideSystem: true })
+  useKeyboardShortcut(keysAlternate, handleKeyboardShortcutColor, { ignoreElementWithClassName: ["ignoreMe1", "ignoreMe2"] })
+
 
   return (
     <div style={styles.main}>
