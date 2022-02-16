@@ -12,8 +12,8 @@
     "url": "git+https://github.com/arthurtyukayev/use-keyboard-shortcut.git"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "devDependencies": {
     "cypress": "^9.1.1",
