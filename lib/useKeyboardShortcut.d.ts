@@ -7,5 +7,6 @@ declare function useKeyboardShortcut(
   options?: {
     overrideSystem?: boolean;
     ignoreInputFields?: boolean;
+    repeatOnHold?: boolean;
   }
 ): void;
