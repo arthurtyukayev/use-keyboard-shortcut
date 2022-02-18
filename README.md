@@ -58,7 +58,7 @@ There are some issues when it comes to overriding default keys such as `Meta`, `
 
 Some browsers just simply ignore `Event.preventDefault()` when it comes to specific browser actions. For example, on Chrome the shortcut `Meta + S` can be prevented *sometimes* from opening the Save Dialog, however the shortcut `Meta + T` cannot be prevented from opening a new tab. _Results may vary depending on the browser._
 
-Browser behavior that causes some sort of dialog to appear might perform poorly. During testing, the keyup listener doesn't fire in some browsers if the callback resulted in a dialog appearing. For example, creating a shortcut such as `Meta + A` that opens an `alert()`, may sometimes cause the keyup listener to not fire and cause keys to be "stuck".
+Callback behavior or browser behavior that causes a system dialog to appear might perform poorly. During testing, the keyup listener doesn't fire in some browsers if the callback or overriden shortcut resulted in a dialog appearing. For example, creating a shortcut such as `Meta + A` that opens an `alert()`, may sometimes cause the keyup listener to not fire and cause keys to be "stuck".
 
 ## Bugs / Problems 
 [Please create an issue](https://github.com/arthurtyukayev/use-keyboard-shortcut/issues/new). 
