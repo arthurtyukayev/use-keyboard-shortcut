@@ -1,6 +1,6 @@
 export default useKeyboardShortcut;
 
-type callbackFn = (heldKeys: string[]) => void;
+type callbackFn = (shortcutKeys: string[]) => void;
 declare function useKeyboardShortcut(
   shortcutKeys: string[],
   callback: callbackFn,
