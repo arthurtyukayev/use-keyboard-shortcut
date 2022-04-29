@@ -10,4 +10,4 @@ declare function useKeyboardShortcut(
     ignoreInputFields?: boolean;
     repeatOnHold?: boolean;
   }
-): { flushHeldKeys };
+): { flushHeldKeys: any };
