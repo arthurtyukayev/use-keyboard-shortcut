@@ -1,7 +1,7 @@
 export default useKeyboardShortcut;
 
 type callbackFn = (shortcutKeys: string[]) => void;
-type flushHeldKeys = () => void;
+type FlushHeldKeysFn = () => void;
 declare function useKeyboardShortcut(
   shortcutKeys: string[],
   callback: callbackFn,
@@ -10,5 +10,4 @@ declare function useKeyboardShortcut(
     ignoreInputFields?: boolean;
     repeatOnHold?: boolean;
   }
-): { flushHeldKeys: flushHeldKeys };
-
+): { flushHeldKeys: FlushHeldKeysFn };
