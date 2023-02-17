@@ -9,5 +9,6 @@ declare function useKeyboardShortcut(
     overrideSystem?: boolean;
     ignoreInputFields?: boolean;
     repeatOnHold?: boolean;
+    isCombination?: boolean;
   }
 ): { flushHeldKeys: FlushHeldKeysFn };
